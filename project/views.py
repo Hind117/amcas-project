@@ -186,9 +186,9 @@ def detail(request, article_id):
     # Comment posted
     if request.method == 'POST':
         if not request.user.is_authenticated:
-            raise ValidationError('You Can Not Comment or Like Without Registration')
+            messages.error(request, 'You have to login to like this post')
         comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
+        if comment_form.is_valid() and request.user.is_authenticated:
             new_comment = comment_form.save(commit=False)
             new_comment.post = detail_page
             new_comment.save()
@@ -197,7 +197,7 @@ def detail(request, article_id):
                            'comments': comments,
                            'new_comment': new_comment,
                            'comment_form': comment_form})
-        if request.method == 'POST':
+        if request.method == 'POST' and request.user.is_authenticated:
             article_id = get_object_or_404(Article, pk=article_id)
             article_id.like = True
             article_id.like_count += 1
