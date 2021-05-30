@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%6a2!l237u5n45=(kt0$2$ce194-arc)awmhy3da9^$g79ugc&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://amacss.herokuapp.com/']
 
 
 # Application definition
@@ -154,3 +154,5 @@ EMAIL_HOST_PASSWORD = 'hindraneemhindrahaflayan'
 #security
 
 
+SECURE_SSL_REDIRECT = True
+CSRF_COOKIE_SECURE = True

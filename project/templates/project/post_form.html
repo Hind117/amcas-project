@@ -1,14 +1,13 @@
 {% extends 'project/base.html' %}
 {% load static %}
-{% block title %}Contact us{% endblock title%}
+{% block title %}Add post{% endblock title%}
 
 {% block contact %}
 
 <div id="body">
 			<div class="header">
 				<div class="contact">
-					<h1>Contact</h1>
-					<h2>Add aPost</h2>
+					<h1>ADD A POST</h1>
 					<form method="post">
                                 {{ post_form.as_p }}
                                 {% csrf_token %}
