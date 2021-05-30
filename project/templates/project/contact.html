@@ -1,0 +1,24 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Contact us{% endblock title%}
+
+{% block contact %}
+
+<div id="body">
+			<div class="header">
+				<div class="contact">
+					<h1>Contact</h1>
+					<h2>DO NOT HESITATE TO CONTACT US</h2>
+					<form action="{% url 'contact' %}" name="contact-form" method="POST">
+						{% csrf_token %}
+						<input type="text" name="name" value="Name" onblur="this.value=!this.value?'Name':this.value;" onfocus="this.select()" onclick="this.value='';">
+						<input type="text" name="email" value="Email Address" onblur="this.value=!this.value?'Email Address':this.value;" onfocus="this.select()" onclick="this.value='';">
+
+						<input type="text" name="subject" value="Subject" onblur="this.value=!this.value?'Subject':this.value;" onfocus="this.select()" onclick="this.value='';">
+						<textarea name="message" cols="50" rows="7">Message</textarea>
+						<input type="submit" value="Send" id="submit"><a onclick="document.getElementById('contact-form').submit();">Send</a>
+					</form>
+				</div>
+			</div>
+		</div>
+{% endblock contact %}

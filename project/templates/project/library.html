@@ -1,0 +1,36 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Topic{% endblock title%}
+
+{% block contact %}
+<div id="body" >
+	<div class="header">
+		<div>
+			<h1>AMCAS Library</h1>
+			<center>
+			<div class="article">
+				<ul>
+					{% for x in books %}
+					<li>
+						<img style="width:50%" src="{{x.image.url}}" alt="">
+						<h1>{{x.title}}</h1>
+						<span>{{x.time}}</span>
+						<br>
+						<h1>You Can buy the book from:</h1>
+						<br>
+						<a target="_blank" href="{{x.link1}}" class="more">Jamloon</a>
+						<br>
+						<a target="_blank" href="{{x.link2}}" class="more">Jarir</a>
+						<br>
+						<a target="_blank" href="{{x.link3}}" class="more">Amazon</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+				</center>
+
+		</div>
+	</div>
+</div>
+
+{% endblock contact %}

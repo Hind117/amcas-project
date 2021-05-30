@@ -1,0 +1,65 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}{{ detail_blog.title }}{% endblock title%}
+
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>{{ detail_blog.title }}</h1>
+            <div class="article">
+                <img src="{{detail_blog.image.url}}" alt="">
+                <span>{{ detail_blog.date }}</span>
+                <p>{{ detail_blog.body }}</p>
+                <form action="" method="post" name="like" id="likeform">
+                    {% csrf_token %}
+                    <button type='submit' style="margin-left: -40px" name='like' value="" class="btn btn-secondary">
+                        Like
+                    </button>
+                </form>
+                <h2>{{ like_count }} Like{{ like_count|pluralize }}</h2>
+                <div style="margin-top: -200px">
+                    <div class="col-md-8 card mb-4  mt-3 ">
+                        <div class="card-body">
+                            <h2>{{ comments.count }} comments</h2>
+                            {% for comment in comments %}
+                            <div class="comments" style="padding: 10px;">
+                                <p class="font-weight-bold">
+                                    {{ comment.name }}
+                                    <span class=" text-muted font-weight-normal">
+                                      {{ comment.created_on }}
+                                    </span>
+                                </p>
+                                <span style="color: white">{{ comment.body | linebreaks }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-8 card mb-4  mt-3 ">
+                        <div class="card-body">
+                            {% if new_comment %}
+                            <div class="alert alert-success" role="alert">
+                                Your comment is awaiting moderation
+                            </div>
+                            {% else %}
+                            <h3 style="color: white;">Leave a comment</h3>
+                            <form method="post">
+                                {{ comment_form.as_p }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock contact %}

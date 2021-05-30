@@ -1,0 +1,60 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Deimos</h1>
+            <img src="{% static 'project/images/mars_moon2.jpg' %}" alt="">
+            <br/>
+
+            <h2>Overview</h2>
+            <p>Deimos is the smaller of Mars' two moons. Being only 9 by 7 by 6.8 miles in size (15 by 12 by 11
+                kilometers), Deimos whirls around Mars every 30 hours.
+            </p>
+            <p>Like Phobos, Deimos is a small and lumpy, heavily cratered object. Its craters are generally smaller than
+                1.6 miles (2.5 kilometers) in diameter, however, and it lacks the grooves and ridges seen on Phobos.
+                Typically when a meteorite hits a surface, surface material is thrown up and out of the resulting
+                crater. The material usually falls back to the surface surrounding the crater. However, these ejecta
+                deposits are not seen on Deimos, perhaps because the moon's gravity is so low that the ejecta escaped to
+                space. Material does appear to have moved down slopes. Deimos also has a thick regolith, perhaps as deep
+                as 328 feet (100 meters), formed as meteorites pulverized the surface.
+            </p>
+            <p>Deimos is a dark body that appears to be composed of C-type surface materials, similar to that of
+                asteroids found in the outer asteroid belt.
+            </p>
+
+            <h2>Discovery</h2>
+            <p>Deimos was discovered on Aug. 11, 1877 by Asaph Hall.
+            </p>
+            <h2>How Deimos Got its Name</h2>
+            <p>Hall named Mars' moons for the mythological sons of Ares, the Greek counterpart of the Roman god, Mars.
+                Deimos, whose name means dread, is the brother of Phobos.
+            </p>
+            <iframe width="100%" height="310" src="https://www.youtube.com/embed/d493OKZbB6k"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+
+            <ul>
+                <li>
+                    <div >
+                        <a href="{% url 'marsMoon' %}" class="more">Previous Page</a></div>
+
+                    <div ><br/>
+                        <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

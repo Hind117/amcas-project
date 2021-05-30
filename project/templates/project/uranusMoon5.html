@@ -1,0 +1,51 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Umbriel</h1>
+            <img src="{% static 'project/images/uranusmoon5.jpg' %}" alt="">
+            <br/>
+
+            <h2>Overview</h2>
+            <p>Umbriel is the darkest of Uranus' largest moons. It reflects only 16 percent of the light that strikes
+                its surface, a feature similar to the highland areas of Earth's Moon. Other Uranian moons are much
+                brighter. The process by which Umbriel's ancient cratered surface was darkened remains a mystery.</p>
+            <p>Umbriel has a diameter of about 750 miles (1,200 kilometers). Images taken by Voyager 2 in 1986 revealed
+                a curious bright ring about 90 miles (140 kilometers) in diameter on the moon's dark surface. It is
+                unclear what created the distinctive ring, although it may be frost deposits associated with an impact
+                crater.</p>
+
+
+            <h2>Discovery</h2>
+            <p>Umbriel was discovered on Oct. 24, 1851 by English astronomer William Lassell.</p>
+
+            <h2>How Umbriel Got its Name</h2>
+            <p>Umbriel is named for a malevolent spirit in English poet Alexander Pope's 18th century poem "Rape of the Lock."</p>
+            <ul>
+                <li>
+                    <div>
+                        <a href="{% url 'uranusMoon' %}" class="more">Previous Page</a></div>
+
+                    <div><br/>
+                        <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                    </div>
+
+                    <div><br/>
+                        <a href="https://solarsystem.nasa.gov/moons/uranus-moons/umbriel/in-depth/"
+                           class="more">Reference</a>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

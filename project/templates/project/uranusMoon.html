@@ -1,0 +1,99 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+    <div id="body">
+        <div class="header">
+            <div>
+                <h1>Uranus Moons</h1>
+                <ul>
+                    <li>
+                        <a href="{% url 'uranusMoon1' %}"><img src="{% static 'project/images/uranusmoon1-1.png' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Ariel</h1>
+                            <p>All of Uranus' larger moons, including Ariel, are thought to consist mostly of roughly
+                                equal amounts of water ice and silicate rock. Carbon dioxide has also been detected on
+                                Ariel.</p>
+                            <a href="{% url 'uranusMoon1' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'uranusMoon2' %}"><img src="{% static 'project/images/uranusmoon2-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Oberon </h1>
+                            <p>Oberon is the second largest moon of Uranus. Discovered in 1787, little was known about
+                                this moon until Voyager 2 passed it during its flyby of Uranus in January 1986.
+                            </p>
+                            <a href="{% url 'uranusMoon2' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'uranusMoon3' %}"><img src="{% static 'project/images/uranusmoon3-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Puck</h1>
+                            <p>Puck is one of the small inner moons of Uranus.</p>
+                            <a href="{% url 'uranusMoon3' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'uranusMoon4' %}"><img src="{% static 'project/images/uranusmoon4-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Titania</h1>
+                            <p>Titania is Uranus' largest moon. Images taken by Voyager 2 almost 200 years after
+                                Titania's discovery revealed signs that the moon was geologically active.</p>
+                            <a href="{% url 'uranusMoon4' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'uranusMoon5' %}"><img src="{% static 'project/images/uranusmoon5-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Umbriel</h1>
+                            <p>Umbriel is the darkest of Uranus' largest moons. It reflects only 16 percent of the light
+                                that strikes its surface</p>
+                            <a href="{% url 'uranusMoon5' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>For Further Information About Uranus Moons</h2>
+                <iframe width="100%" height="310" src="https://www.youtube.com/embed/B6tOutQvQsE"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+
+                </iframe>
+                <br/>
+
+                <ul>
+                    <li>
+                        <div><br/>
+                            <a href="{% url 'uranus' %}" class="more">Previous Page</a>
+                        </div>
+
+                        <div><br/>
+                            <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                        </div>
+                        <div><br/>
+                            <a href="https://solarsystem.nasa.gov/moons/uranus-moons/overview/?page=0&per_page=40&order=name+asc&search=&placeholder=Enter+moon+name&condition_1=69%3Aparent_id&condition_2=moon%3Abody_type%3Ailike"
+                               class="more">Explore More</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contact %}

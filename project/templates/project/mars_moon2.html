@@ -1,0 +1,74 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Phobos</h1>
+            <img src="{% static 'project/images/mars_moon3.jpg' %}" alt="">
+            <br/>
+
+            <h2>Overview</h2>
+            <p>Phobos, gouged and nearly shattered by a giant impact crater and beaten by thousands of meteorite
+                impacts, is on a collision course with Mars.
+            </p>
+            <p>Phobos is the larger of Mars' two moons and is 17 x 14 x 11 miles (27 by 22 by 18 kilometers) in
+                diameter. It orbits Mars three times a day, and is so close to the planet's surface that in some
+                locations on Mars it cannot always be seen.
+            </p>
+            <p>Phobos is nearing Mars at a rate of six feet (1.8 meters) every hundred years; at that rate, it will
+                either crash into Mars in 50 million years or break up into a ring. Its most prominent feature is the
+                6-mile (9.7 kilometer) crater Stickney, its impact causing streak patterns across the moon's surface.
+                Stickney was seen by Mars Global Surveyor to be filled with fine dust, with evidence of boulders sliding
+                down its sloped surface.
+            </p>
+            <p>Phobos and Deimos appear to be composed of C-type rock, similar to blackish carbonaceous chondrite
+                asteroids. Observations by Mars Global Surveyor indicate that the surface of this small body has been
+                pounded into powder by eons of meteoroid impacts, some of which started landslides that left dark trails
+                marking the steep slopes of giant craters.
+            </p>
+            <p>Measurements of the day and night sides of Phobos show such extreme temperature variations that the
+                sunlit side of the moon rivals a pleasant winter day in Chicago, while only a few kilometers away, on
+                the dark side of the moon, the climate is more harsh than a night in Antarctica. High temperatures for
+                Phobos were measured at 25 degrees Fahrenheit (-4 degrees Celsius) and lows at -170 degrees Fahrenheit
+                (-112 degrees Celsius). This intense heat loss is likely a result of the fine dust on Phobos' surface,
+                which is unable to retain heat.
+            </p>
+            <p>Phobos has no atmosphere. It may be a captured asteroid, but some scientists show evidence that
+                contradicts this theory.
+            </p>
+
+            <h2>Discovery</h2>
+            <p>Phobos was discovered on Aug. 17, 1877 by Asaph Hall.
+            </p>
+            <h2>How Deimos Got its Name</h2>
+            <p>Hall named Mars' moons for the mythological sons of Ares, the Greek counterpart of the Roman god, Mars.
+                Phobos, whose name means fear is the brother of Deimos.
+            <p/>
+            <iframe width="100%" height="310" src="https://www.youtube.com/embed/3bbyHfBgwrE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+
+
+            <ul>
+                <li>
+                    <div>
+                        <a href="{% url 'marsMoon' %}" class="more">Previous Page</a></div>
+
+                    <div><br/>
+                        <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

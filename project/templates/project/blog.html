@@ -1,0 +1,59 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock title%}
+
+
+{% block search %}
+<form class=" my-2 my-lg-0" action="{% url 'blog' %}">
+    <input style="width: 300px; height: 30px;" class="form-control mr-sm-2" type="search" placeholder="search"
+           aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+{% endblock search %}
+
+{% block contact %}
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Blog</h1>
+            <div class="article">
+                <ul>
+                    {% for x in var_1.all %}
+                    <li>
+                        <a href="{% url 'detail' x.id %}"><img src="{{x.image.url}}" alt=""></a>
+                        <h1>{{x.title}}</h1>
+                        <span>{{x.date}}</span>
+                        <p>{{x.summary}}</p>
+                        <a href="{% url 'detail' x.id %}" class="more">Read More</a>
+                    </li>
+                    {% endfor %}
+                    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+                </ul>
+            </div>
+            <div class="sidebar">
+                <div class="article">
+						<ul>
+
+							<li>
+								<h1>RECENT POSTS</h1>
+								<ul>
+                                    {% for post in post %}
+									<li>
+										<h2>{{ post.title }}</h2>
+										<span>{{ post.date }}</span>
+                                        <a href="{% url 'detail' post.id %}" class="more">Read More</a>
+									</li>
+                                    {% endfor %}
+								</ul>
+                                <a href="{% url 'post_form' %}" class="more">ADD POST</a>
+							</li>
+
+						</ul>
+                    </div>
+					</div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

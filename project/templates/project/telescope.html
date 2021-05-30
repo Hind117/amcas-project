@@ -1,0 +1,52 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Get your first telescope{% endblock title%}
+
+{% block contact %}
+<style>
+	a.more {
+	background-color: #000000;
+	color: #a3a3a3;
+	display: block;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: normal;
+	height: 49px;
+	line-height: 49px;
+	margin: 0 200px 0 0;
+	padding: 0;
+	text-align: center;
+	text-transform: uppercase;
+	position: relative;
+	width: 180px;
+	z-index: 55;
+}
+
+a.more:hover {
+	background-color: #ab000b;
+	color: #ffffff;
+}
+</style>
+
+<div id="body" class="about">
+			<div class="header">
+				<div>
+					<h1>Welcome {{ request.user }}</h1>
+					<h2>We will guide you to get your first telescope as a beginner</h2>
+					<p>To have a clear idea how you can get your first telescope, download the file bellow.</p>
+				</div>
+			</div>
+            <div class="body">
+				<div>
+
+                    <iframe width="100%" height="500px" src="{% static 'project/files/get-telescope.pdf' %}"></iframe>
+					<br>
+					<br>
+					<center>
+					<a href="{% static 'project/files/get-telescope.pdf' %}" download class="more">Download</a>
+						</center>
+                </div>
+            </div>
+</div>
+
+{% endblock %}

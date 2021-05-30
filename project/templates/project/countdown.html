@@ -1,0 +1,71 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Topic{% endblock title%}
+
+{% block contact %}
+<div id="body" >
+    <div class="header">
+        <div>
+            <h2 style="color:white;">Halley's Comet<br><br> Perihelion:{{formatted_date}}</h2>
+            <hr>
+            <td><h1 style="margin: 0 !important; margin-top: 30px !important;" id="demo"></h1></td>
+            <br>
+            <img src="{% static 'project/images/Halley.gif' %}">
+            <br>
+            <hr>
+            <br>
+            <h2>Read About Halley's Comet</h2>
+            <h2>From <a href="www.space.com">www.space.com</a></h2>
+            <iframe name="comet" width="100%" height="500px" src="https://www.space.com/19878-halleys-comet.html"></iframe>
+
+            <br>
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}
+
+{% block script %}
+
+<script>
+
+// Set the date we're counting down to
+var countDownDate = new Date("{{date}}").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = {{year}}+"y "+{{mon}}+"m "+{{day}} + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+}
+}, 1000);
+</script>
+
+<!-- 
+<script>
+    var countDownDate = new Date("{{date}}").getTime();
+$('#demo').countdown({since: countDownDate, 
+    format: 'YOWDHMS'});
+</script>
+-->
+{% endblock script %}

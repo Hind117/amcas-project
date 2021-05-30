@@ -1,0 +1,50 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Nereid</h1>
+            <img src="{% static 'project/images/neptunemoon5.jpg' %}" alt="">
+            <br/>
+
+            <h2>Overview</h2>
+            <p>Nereid is one of the outermost of Neptune's known moons and is among the largest. Nereid is unique
+                because it has one of the most eccentric orbits of any moon in our solar system. Nereid is so far from
+                Neptune that it requires 360 Earth days to make one orbit. This odd orbit suggests that Nereid may be a
+                captured asteroid or Kuiper Belt object or that it was greatly disturbed during the capture of Neptune's
+                largest moon Triton.</p>
+
+
+            <h2>Discovery</h2>
+            <p>Nereid was discovered on May 1, 1949 by Gerard P. Kuiper with a ground-based telescope. It was the last
+                satellite of Neptune to be discovered before Voyager 2's discoveries four decades later.</p>
+
+            <h2>How Nereid Got its Name</h2>
+            <p>Nereid is named after the Nereids, sea-nymphs, in Greek mythology. Kuiper proposed the name when he reported his discovery.</p>
+            <ul>
+                <li>
+                    <div>
+                        <a href="{% url 'neptuneMoon' %}" class="more">Previous Page</a></div>
+
+                    <div><br/>
+                        <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                    </div>
+
+                    <div><br/>
+                        <a href="https://solarsystem.nasa.gov/moons/neptune-moons/nereid/in-depth/"
+                           class="more">Reference</a>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

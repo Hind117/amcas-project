@@ -1,0 +1,48 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Puck</h1>
+            <img src="{% static 'project/images/uranusmoon3.jpg' %}" alt="">
+            <br/>
+
+            <h2>Overview</h2>
+            <p>Puck is one of the small inner moons of Uranus. With a diameter of about 150 km (about 90 miles), Puck is
+                the largest of Uranus' known lesser satellites. Puck orbits Uranus in less than one Earth day.</p>
+
+
+            <h2>Discovery</h2>
+            <p>Puck was discovered December 1985 in images sent back by the Voyager 2 spacecraft during its flyby of
+                Uranus.</p>
+
+            <h2>How Puck Got its Name</h2>
+            <p>Originally designated S/1985 U1, Puck is named for a mischievous sprite in William Shakespeare's "A
+                Midsummer Night's Dream."</p>
+            <ul>
+                <li>
+                    <div>
+                        <a href="{% url 'uranusMoon' %}" class="more">Previous Page</a></div>
+
+                    <div><br/>
+                        <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                    </div>
+
+                    <div><br/>
+                        <a href="https://solarsystem.nasa.gov/moons/uranus-moons/puck/in-depth/"
+                           class="more">Reference</a>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

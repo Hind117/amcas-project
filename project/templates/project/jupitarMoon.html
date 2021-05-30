@@ -1,0 +1,94 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+    <div id="body">
+        <div class="header">
+            <div>
+                <h1>Jupitar Moons</h1>
+                <ul>
+                    <li>
+                        <a href="{% url 'jupitarMoon1' %}"><img src="{% static 'project/images/jupitarmoon2.jpg' %}"
+                                                                alt=""></a>
+                        <div>
+                            <h1>Adrastea</h1>
+                            <p>Adrastea was discovered in July 1979 by the Voyager science team.</p>
+                            <a href="{% url 'jupitarMoon1' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'jupitarMoon2' %}"><img src="{% static 'project/images/jupitarmoon4.png' %}"
+                                                                alt=""></a>
+                        <div>
+                            <h1>Europa</h1>
+                            <p>Decades ago, science fiction offered a hypothetical scenario: What if alien life were
+                                thriving in an ocean beneath the icy surface of Jupiter’s moon Europa?
+                            </p>
+                            <a href="{% url 'jupitarMoon2' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'jupitarMoon3' %}"><img src="{% static 'project/images/jupitarmoon6.png' %}"
+                                                                alt=""></a>
+                        <div>
+                            <h1>Ganymede</h1>
+                            <p>Ganymede is the largest moon in our solar system and the only moon with its own magnetic
+                                field.</p>
+                            <a href="{% url 'jupitarMoon3' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'jupitarMoon4' %}"><img src="{% static 'project/images/jupitarmoon8.png' %}"
+                                                                alt=""></a>
+                        <div>
+                            <h1>Io</h1>
+                            <p>Jupiter's rocky moon Io is the most volcanically active world in the solar system</p>
+                            <a href="{% url 'jupitarMoon4' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'jupitarMoon5' %}"><img src="{% static 'project/images/jupitarmoon10.png' %}"
+                                                                alt=""></a>
+                        <div>
+                            <h1>Callisto</h1>
+                            <p>Callisto is Jupiter’s second largest moon and the third largest moon in our solar
+                                system.</p>
+                            <a href="{% url 'jupitarMoon5' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>For Further Information About Jupitar Moons</h2>
+                <iframe width="100%" height="310" src="https://www.youtube.com/embed/mJv0_DCmf6o"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+
+                </iframe>
+
+                <ul>
+                    <li>
+                        <div><br/>
+                            <a href="{% url 'jupiter' %}" class="more">Previous Page</a></div>
+                        <div><br/>
+                            <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                        </div>
+                        <div><br/>
+                            <a href="https://solarsystem.nasa.gov/moons/jupiter-moons/overview/?page=1&per_page=40&order=name+asc&search=&placeholder=Enter+moon+name&condition_1=9%3Aparent_id&condition_2=moon%3Abody_type%3Ailike&condition_3=moon%3Abody_type"
+                               class="more">Explore More</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contact %}

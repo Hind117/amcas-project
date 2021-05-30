@@ -1,0 +1,53 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+<div id="body">
+    <div class="header">
+        <div>
+            <h1>Titania</h1>
+            <img src="{% static 'project/images/uranusmoon4.jpg' %}" alt="">
+            <br/>
+
+            <h2>Overview</h2>
+            <p>Titania is Uranus' largest moon. Images taken by Voyager 2 almost 200 years after Titania's discovery
+                revealed signs that the moon was geologically active.</p>
+            <p>A prominent system of fault valleys, some nearly 1,000 miles (1,609 kilometers) long, is visible near the
+                terminator (shadow line). The troughs break the crust in two directions, an indication of some tectonic
+                extension of Titania's crust. Deposits of highly reflective material, which may represent frost, can be
+                seen along the Sun-facing valley walls.</p>
+            <p>
+                The moon is about 1,000 miles (1,600 kilometers) in diameter. The neutral gray color of Titania is
+                typical of most of the significant Uranian moons.</p>
+
+
+            <h2>Discovery</h2>
+            <p>Titania was discovered on Jan. 11, 1787 by British astronomer William Herschel.</p>
+
+            <h2>How Titania Got its Name</h2>
+            <p>Titania is named for the queen of the fairies in William Shakespeare's 16th century play "A Midsummer Night's Dream."</p>
+            <ul>
+                <li>
+                    <div>
+                        <a href="{% url 'uranusMoon' %}" class="more">Previous Page</a></div>
+
+                    <div><br/>
+                        <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                    </div>
+
+                    <div><br/>
+                        <a href="https://solarsystem.nasa.gov/moons/uranus-moons/titania/in-depth/"
+                           class="more">Reference</a>
+                    </div>
+                </li>
+
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock contact %}

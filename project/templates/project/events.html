@@ -1,0 +1,30 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Astronomical Events{% endblock title%}
+
+{% block contact %}
+
+	<div id="body">
+<div class="header">
+				<div>
+					<h1>Astronomical Events</h1>
+                    {% for post in file %}
+                    <h2>{{post.title}}</h2>
+                    <img src="{{post.image.url}}" alt="">
+					<br/>
+						<ul>
+							<li>
+								<div>
+									<a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}" class="more">Download</a>
+								</div>
+							</li>
+
+
+						</ul>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+
+
+{% endblock contact %}

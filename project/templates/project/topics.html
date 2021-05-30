@@ -1,0 +1,26 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Topic{% endblock title%}
+
+{% block contact %}
+<div id="body" >
+	<div class="header">
+		<div>
+			<h1>Topics</h1>
+			<div class="article">
+				<ul>
+					{% for x in topics %}
+					<li>
+						<h1>{{x.title}}</h1>
+						<span>{{x.time}}</span>
+						<a target="_blank" href="{% url 'downtopics' file=x.id %}" class="more">Download</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock contact %}

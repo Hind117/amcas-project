@@ -1,0 +1,97 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+    <div id="body">
+        <div class="header">
+            <div>
+                <h1>Saturn Moons</h1>
+                <ul>
+                    <li>
+                        <a href="{% url 'saturnMoon1' %}"><img src="{% static 'project/images/saturnmoon2.png' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Iapetus</h1>
+                            <p>Adrastea was discovered in July 1979 by the Voyager science team.</p>
+                            <a href="{% url 'saturnMoon1' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'saturnMoon2' %}"><img src="{% static 'project/images/saturnmoon3-1.png' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Dione</h1>
+                            <p>Decades ago, science fiction offered a hypothetical scenario: What if alien life were
+                                thriving in an ocean beneath the icy surface of Jupiter’s moon Europa?
+                            </p>
+                            <a href="{% url 'saturnMoon2' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'saturnMoon3' %}"><img src="{% static 'project/images/saturnmoon4-1.png' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Enceladus</h1>
+                            <p>Ganymede is the largest moon in our solar system and the only moon with its own magnetic
+                                field.</p>
+                            <a href="{% url 'saturnMoon3' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'saturnMoon4' %}"><img src="{% static 'project/images/saturnmoon5-1.png' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Mimas</h1>
+                            <p>Jupiter's rocky moon Io is the most volcanically active world in the solar system</p>
+                            <a href="{% url 'saturnMoon4' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'saturnMoon5' %}"><img src="{% static 'project/images/saturnmoon6-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Methone</h1>
+                            <p>Callisto is Jupiter’s second largest moon and the third largest moon in our solar
+                                system.</p>
+                            <a href="{% url 'saturnMoon5' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>For Further Information About Jupitar Moons</h2>
+                <iframe width="100%" height="310" src="https://www.youtube.com/embed/0RLcPWcjVgA"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+
+                </iframe>
+                <br/>
+
+                <ul>
+                    <li>
+                        <div><br/>
+                            <a href="{% url 'saturn' %}" class="more">Previous Page</a>
+                        </div>
+
+                        <div><br/>
+                            <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                        </div>
+                        <div><br/>
+                            <a href="https://solarsystem.nasa.gov/moons/saturn-moons/overview/?page=0&per_page=40&order=name+asc&search=&placeholder=Enter+moon+name&condition_1=38%3Aparent_id&condition_2=moon%3Abody_type%3Ailike"
+                               class="more">Explore More</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contact %}

@@ -1,0 +1,20 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Contact us{% endblock title%}
+
+{% block contact %}
+
+<div id="body">
+			<div class="header">
+				<div class="contact">
+					<h1>Contact</h1>
+					<h2>Add aPost</h2>
+					<form method="post">
+                                {{ post_form.as_p }}
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                            </form>
+				</div>
+			</div>
+		</div>
+{% endblock contact %}

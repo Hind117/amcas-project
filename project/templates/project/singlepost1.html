@@ -1,0 +1,24 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}{{ detail_blog1.title }}{% endblock title%}
+
+{% block contact %}
+
+
+
+<div id="body">
+			<div class="header">
+				<div>
+					<h1>{{ detail_blog1.title }}</h1>
+					<div class="article">
+						<img src="{{detail_blog1.image.url}}" alt="">
+
+						<span>{{ detail_blog1.date }}</span>
+						<p>{{ detail_blog1.body }}</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+{% endblock contact %}

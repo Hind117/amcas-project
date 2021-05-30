@@ -1,0 +1,45 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+    <div id="body">
+        <div class="header">
+            <div>
+                <h1>Mars Moons</h1>
+                <ul>
+                    <li>
+                        <a href="{% url 'mars_moon1' %}"><img src="{% static 'project/images/mars_moon1.jpg' %}" alt=""></a>
+                        <div>
+                            <h1>Deimos</h1>
+                            <p>Deimos is the smaller of Mars' two moons. Being only 9 by 7 by 6.8 miles in size (15 by
+                                12 by 11 kilometers), Deimos whirls around Mars every 30 hours.</p>
+                            <a href="{% url 'mars_moon1' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'mars_moon2' %}"><img src="{% static 'project/images/mars_moon4.jpg' %}" alt=""></a>
+                        <div>
+                            <h1>Phobos</h1>
+                            <p>Phobos was discovered on Aug. 17, 1877 by Asaph Hall.</p>
+                            <a href="{% url 'mars_moon2' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <div><br/>
+                            <a href="{% url 'mars' %}" class="more">Previous Page</a></div>
+                        <div><br/>
+                            <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contact %}

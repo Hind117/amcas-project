@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Arab Mars Club for Astronomy and Space{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'project/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'project/css/mobile.css' %}">
+
+    <script src="{% static 'project/js/mobile.js' %}" type="text/javascript"></script>
+    <link rel="icon" type="image/ico" href="{% static 'project/images/AMCAS.ico' %}"/>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+    <style type="text/css">
+    .is-countdown{
+        background-color: black !important;
+        border: 0 !important;
+
+    }
+</style>
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+
+    <div id="page">
+        <div id="header">
+            <div>
+                <a href="{% url 'home' %}" class="logo"><img src="{% static 'project/images/logoo.png' %}" alt="" style="width: 60px; height: 60px;"></a>
+                <ul class="navigation">
+<!--                 <li>
+                    <a href="{% url 'home' %}" style="font-family: audiowide-regular-webfont; font-size: 18px; font-weight: normal;">AMCAS</a>
+                </li> -->
+<!--                 <li class="selected">
+                    <a href="{% url 'home' %}">Home</a>
+                </li> -->
+                <li>
+                    <a href="{% url 'about' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">About</a>
+                </li>
+                <li>
+                    <a href="{% url 'planets' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Planets</a>
+                    <li>
+                        <a href="{% url 'blog' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Contact</a>
+                    </li>
+
+
+                    <li>
+                        <a href="{% url 'nasa' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">NASA News</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'library' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">AMCAS Library</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'events' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Events</a>
+                    </li>
+                    <li class="menu">
+                        <a href="{% url 'topics' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Topics</a>
+                        <ul class="primary" style="width: 300px;">
+                            <li>
+                                <a href="{% url 'signup' %}" style="font-size:15px;">Join us to have access</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'countdown' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Halley's Comet</a>
+                    </li>
+                     <li class="menu">
+                        <a href="{% url 'telescope' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Get Your First Telescope</a>
+                        <ul class="primary" style="width: 300px;">
+                            <li>
+                                <a href="{% url 'signup' %}" style="font-size:15px;">Join us to have access</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">logout</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'profile' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">User Profile</a>
+                    </li>
+                    <li>
+                        <a href="#" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Welcome {{ request.user }}</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'signup' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}" style="text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;">Login</a>
+                    </li>
+                    {% endif %}
+                    {% block search %}
+
+                    {% endblock search %}
+
+                </ul>
+            </div>
+
+        </div>
+
+        {% block contact %}
+
+        {% endblock contact %}
+
+
+        <!-- ======= Footer ======= -->
+
+
+        <div id="footer">
+            <div class="connect">
+                <div>
+                    <h1>FOLLOW OUR MISSIONS ON</h1>
+                    <div>
+
+                        <a target="_blank" href="https://twitter.com/AMCAS_ME" class="twitter">twitter</a>
+                        <a target="_blank" href="mailto:amcas.middle.east@gmail.com" class="googleplus">googleplus</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footnote">
+                <div>
+                    <p>&copy; 2023 BY AMCAS | ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+   
+
+    {% block script %}
+
+    {% endblock script %}
+
+</body>
+</html>

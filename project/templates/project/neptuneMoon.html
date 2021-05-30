@@ -1,0 +1,96 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block contact %}
+
+
+    <div id="body">
+        <div class="header">
+            <div>
+                <h1>Neptune Moons</h1>
+                <ul>
+                    <li>
+                        <a href="{% url 'neptuneMoon1' %}"><img src="{% static 'project/images/neptunemoon1-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Triton</h1>
+                            <p>Triton is the largest of Neptune's 14 moons. It is unusual because it is the only large
+                                moon in our solar system that orbits in the opposite direction of its planet's
+                                rotation―a retrograde orbit.</p>
+                            <a href="{% url 'neptuneMoon1' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="{% url 'neptuneMoon2' %}"><img src="{% static 'project/images/neptunemoon2-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Proteus </h1>
+                            <p>Proteus is one of the largest of Neptune's known moons, although it is not as big as Triton.
+                            </p>
+                            <a href="{% url 'neptuneMoon2' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'neptuneMoon3' %}"><img src="{% static 'project/images/neptunemoon3-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Larissa</h1>
+                            <p>Larissa is another of the small moons found near Neptune's faint ring system in 1989</p>
+                            <a href="{% url 'neptuneMoon3' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'neptuneMoon4' %}"><img src="{% static 'project/images/neptunemoon4-1.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Naiad</h1>
+                            <p>Potato-shaped Naiad is most likely made up of fragments of Neptune's original satellites</p>
+                            <a href="{% url 'neptuneMoon4' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'neptuneMoon5' %}"><img src="{% static 'project/images/neptunemoon5-.jpg' %}"
+                                                               alt=""></a>
+                        <div>
+                            <h1>Nereid</h1>
+                            <p>Nereid is unique because it has one of the most eccentric orbits of any moon in our solar system.</p>
+                            <a href="{% url 'neptuneMoon5' %}" class="more">Read More</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <h2>For Further Information About Neptune Moons</h2>
+                <iframe width="100%" height="310" src="https://www.youtube.com/embed/lei4LxbHsnw"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+
+                </iframe>
+                <br/>
+
+                <ul>
+                    <li>
+                        <div><br/>
+                            <a href="{% url 'neptune' %}" class="more">Previous Page</a>
+                        </div>
+
+                        <div><br/>
+                            <a href="{% url 'planets' %}" class="more">Planets Page</a>
+                        </div>
+                        <div><br/>
+                            <a href="https://solarsystem.nasa.gov/moons/neptune-moons/overview/?page=0&per_page=40&order=name+asc&search=&placeholder=Enter+moon+name&condition_1=90%3Aparent_id&condition_2=moon%3Abody_type%3Ailike"
+                               class="more">Explore More</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock contact %}
