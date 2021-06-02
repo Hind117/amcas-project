@@ -192,7 +192,7 @@ def detail(request, article_id):
 
         if request.POST.get('form_type') == 'like':
             if(not user.is_authenticated):
-                like_exception = "You have to login to like this post!"
+                like_exception = "You Can Not Like Without Registration"
             else:
                 if  user in detail_page.likes.all():
                     detail_page.likes.remove(user)
@@ -202,7 +202,7 @@ def detail(request, article_id):
 
         if request.POST.get('form_type') == 'comment':
             if(not user.is_authenticated):
-                comment_exception = "You have to login to comment on this post!"
+                comment_exception = "You Can Not Comment Without Registration"
             else:
                 comment_form = CommentForm(data=request.POST)
                 if comment_form.is_valid():
@@ -222,6 +222,7 @@ def detail(request, article_id):
                    'like_exception':like_exception,
                    'comment_exception':comment_exception,
                    'comment_form': comment_form})
+
 
 
 def signup(request):

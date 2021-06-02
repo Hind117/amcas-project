@@ -74,18 +74,28 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-sm-12">
+                <div class="col-md-4 col-sm-12">
                     <h1 style="color:white">NASA LIVE</h1>
 
                     <iframe width="80%" height="310" src="https://www.youtube.com/embed/21X5lGlDOfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-4 col-sm-12 footer-latest-blog">
                     <h1 style="color:white">LATEST BLOG</h1>
+                    
+                    <div class="row" style="padding:0; margin:0">
+                        <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
+                            <h1 class="title">S2-SMBH</h1>
+                            <span class="date">May 30, 2021</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
+                            <a class="more link">Read More</a>
+                        </div>
+                    </div>
                     {% for post in post %}
                     <div class="row" style="padding:0; margin:0">
                         <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
-                            <h3 class="title" style="color:white;">{{ post.title }}</h3>
-                            <span class="date" style="color:white;">{{ post.date }}</span>
+                            <h1 class="title">{{ post.title }}</h1>
+                            <span class="date">{{ post.date }}</span>
                         </div>
                         <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
                             <a href="{% url 'detail' post.id %}" class="more link">Read More</a>
@@ -99,7 +109,7 @@
                         <li style="color:white;">
                             <a href="{% url 'contact' %}" style="color:white;">Contact</a>
                         </li>
-
+    
                         <li style="color:white;">
                             <a href="{% url 'nasa' %}" style="color:white;">NASA News</a>
                         </li>
@@ -109,7 +119,7 @@
                         <li style="color:white;">
                             <a href="{% url 'about' %}" style="color:white;">About</a>
                         </li>
-
+    
                         <li style="color:white;">
                             <a href="{% url 'events' %}" style="color:white;">Events</a>
                         </li>
@@ -124,4 +134,4 @@
     </div>
 </div>
 
-    {% endblock contact %}
+{% endblock contact %}

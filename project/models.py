@@ -15,7 +15,6 @@ class Contact(models.Model):
         return self.name
 
 
-
 class Article(models.Model):
     title = models.CharField(max_length=250)
     body = models.TextField()

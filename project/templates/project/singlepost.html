@@ -17,11 +17,11 @@
                 {% if like_exception != False %}
                 <p style="color:red"> {{ like_exception }}</p>
                 {% endif %}
-
+                
                 <form action="" method="post" id="likeform">
                     {% csrf_token %}
                     <input type="hidden" name="form_type" value="like"/>
-                    <button type='submit' name='like' value="" class="btn btn-secondary">
+                    <button type='submit' style="margin-left: -40px" name='like' value="" class="btn btn-secondary">
                         {% if liked %}
                         Dislike
                         {% else %}
@@ -29,11 +29,11 @@
                         {% endif %}
                     </button>
                 </form>
-                <h3 style="color:white;">{{ like_count }} Like{{ like_count|pluralize }}</h3>
+                <h2>{{ like_count }} Like{{ like_count|pluralize }}</h2>
                 <div style="margin-top: 0">
                     <div class="col-md-8 card mb-4  mt-3 ">
                         <div class="card-body">
-                            <h3 style="color:white;">{{ comments.count }} comment{{ comments.count|pluralize }}</h3>
+                            <h2>{{ comments.count }} comments</h2>
                             {% for comment in comments %}
                             <div class="comments" style="padding: 10px;">
                                 <p class="font-weight-bold">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-8 card mb-4  mt-3 ">
                         <div class="card-body">
-
+                            
                             {% if comment_exception != False %}
                             <p style="color:red"> {{ comment_exception }}</p>
                             {% endif %}
