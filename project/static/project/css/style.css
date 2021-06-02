@@ -1456,3 +1456,33 @@ a.more {
 #wix a img {
 	width: 100%;
 }
+.footer-latest-blog .title{
+	color: white;
+	float: left;
+	font-family: audiowide-regular-webfont;
+	font-size: 23px;
+	font-weight: normal;
+	line-height: 23px;
+	margin: 0;
+	padding: 4px 0 8px;
+	text-align: left;
+	text-transform: uppercase;
+	width: 310px;
+}
+.footer-latest-blog .date{
+	color: white;
+	display: block;
+	float: left;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 14px;
+	margin: 0 0 10px;
+	padding: 0;
+	text-align: left;
+	text-transform: uppercase;
+	width: 310px;
+}
+.footer-latest-blog .link{
+	margin: 25px 0 0 0;
+}

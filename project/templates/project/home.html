@@ -72,29 +72,54 @@
 
     </div>
     <div class="footer">
-        <div>
-            <ul>
-                <li>
-                    <h1>NASA LIVE</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <h1 style="color:white">NASA LIVE</h1>
 
-                    <iframe width="100%" height="310" src="https://www.youtube.com/embed/21X5lGlDOfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </li>
-                <li>
-                    <h1>LATEST BLOG</h1>
+                    <iframe width="80%" height="310" src="https://www.youtube.com/embed/21X5lGlDOfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h1 style="color:white">LATEST BLOG</h1>
                     {% for post in post %}
-                    <ul>
-                        <li>
-                            <h1>{{ post.title }}</h1>
-                            <span>{{ post.date }}</span>
-
-
-
-                            <a href="{% url 'detail' post.id %}" class="more">Read More</a>
-                        </li>
-                    </ul>
+                    <div class="row" style="padding:0; margin:0">
+                        <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
+                            <h3 class="title" style="color:white;">{{ post.title }}</h3>
+                            <span class="date" style="color:white;">{{ post.date }}</span>
+                        </div>
+                        <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
+                            <a href="{% url 'detail' post.id %}" class="more link">Read More</a>
+                        </div>
+                    </div>
                     {% endfor %}
-                </li>
-            </ul>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <h1 style="color:white">Quick Links</h1>
+                    <ol>
+                        <li style="color:white;">
+                            <a href="{% url 'contact' %}" style="color:white;">Contact</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'nasa' %}" style="color:white;">NASA News</a>
+                        </li>
+                        <li style="color:white;">
+                            <a href="{% url 'library' %}" style="color:white;">AMCAS Library</a>
+                        </li>
+                        <li style="color:white;">
+                            <a href="{% url 'about' %}" style="color:white;">About</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'events' %}" style="color:white;">Events</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'countdown' %}" style="color:white;">Halley's Comet</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
 </div>

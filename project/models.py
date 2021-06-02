@@ -15,14 +15,13 @@ class Contact(models.Model):
         return self.name
 
 
+
 class Article(models.Model):
     title = models.CharField(max_length=250)
     body = models.TextField()
     date = models.DateField()
     image = models.ImageField()
-    like = models.BooleanField(default=False)
-    dislike = models.BooleanField(default=False)
-    like_count = models.IntegerField(default=0)
+    likes = models.ManyToManyField(User)
     published = models.BooleanField(default=True)
 
     def summary(self):

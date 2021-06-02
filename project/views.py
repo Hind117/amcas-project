@@ -180,37 +180,48 @@ def post_form(request):
 
 def detail(request, article_id):
     detail_page = get_object_or_404(Article, pk=article_id)
-    comments = detail_page.comments.all()
-    like_count = detail_page.like_count
+    user = request.user
+    like_exception = False
+    comment_exception = False
     new_comment = None
+
     # Comment posted
+    comment_form = CommentForm()
+
     if request.method == 'POST':
-        if not request.user.is_authenticated:
-            messages.error(request, 'You have to login to like this post')
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid() and request.user.is_authenticated:
-            new_comment = comment_form.save(commit=False)
-            new_comment.post = detail_page
-            new_comment.save()
-            return render(request, 'project/singlepost.html',
-                          {'detail_blog': detail_page, 'post': detail_page, 'like_count': like_count,
-                           'comments': comments,
-                           'new_comment': new_comment,
-                           'comment_form': comment_form})
-        if request.method == 'POST' and request.user.is_authenticated:
-            article_id = get_object_or_404(Article, pk=article_id)
-            article_id.like = True
-            article_id.like_count += 1
-            article_id.save()
-            like_count = article_id.like_count
-    else:
-        comment_form = CommentForm()
+
+        if request.POST.get('form_type') == 'like':
+            if(not user.is_authenticated):
+                like_exception = "You have to login to like this post!"
+            else:
+                if  user in detail_page.likes.all():
+                    detail_page.likes.remove(user)
+                else:
+                    detail_page.likes.add(user)
+
+
+        if request.POST.get('form_type') == 'comment':
+            if(not user.is_authenticated):
+                comment_exception = "You have to login to comment on this post!"
+            else:
+                comment_form = CommentForm(data=request.POST)
+                if comment_form.is_valid():
+                    new_comment = comment_form.save(commit=False)
+                    new_comment.post = detail_page
+                    new_comment.save()
+
+    comments = detail_page.comments.all()
+    like_count = detail_page.likes.count()
+    liked = user in detail_page.likes.all()
+
     return render(request, 'project/singlepost.html',
                   {'detail_blog': detail_page, 'post': detail_page, 'like_count': like_count,
                    'comments': comments,
                    'new_comment': new_comment,
+                   'liked': liked,
+                   'like_exception':like_exception,
+                   'comment_exception':comment_exception,
                    'comment_form': comment_form})
-
 
 
 def signup(request):
