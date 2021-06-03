@@ -115,6 +115,49 @@
         <div id="footer">
             <div class="connect">
                 <div>
+
+                </div>
+            </div>
+            <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <h1 style="color:white; font-family: audiowide-regular-webfont;">NASA LIVE</h1>
+
+                    <iframe width="80%" height="310" src="https://www.youtube.com/embed/21X5lGlDOfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                {% block latestblog %}
+
+                {% endblock latestblog %}
+                <div class="col-md-4 col-sm-12">
+                    <h1 style="color:white; font-family: audiowide-regular-webfont;">Quick Links</h1>
+                    <ol>
+                        <li style="color:white;">
+                            <a href="{% url 'contact' %}" style="color:white; font-size: 18px;">Contact</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'nasa' %}" style="color:white; font-size: 18px;">NASA News</a>
+                        </li>
+                        <li style="color:white;">
+                            <a href="{% url 'library' %}" style="color:white; font-size: 18px;">AMCAS Library</a>
+                        </li>
+                        <li style="color:white;">
+                            <a href="{% url 'about' %}" style="color:white; font-size: 18px;">About</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'events' %}" style="color:white; font-size: 18px;">Events</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'countdown' %}" style="color:white; font-size: 18px;">Halley's Comet</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+            <div class="connect">
+                <div>
                     <h1>FOLLOW US ON</h1>
                     <div>
 
