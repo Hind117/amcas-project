@@ -29,6 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['https://amacss.herokuapp.com']
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Application definition
 
