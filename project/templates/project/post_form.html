@@ -7,10 +7,15 @@
 <div id="body">
 			<div class="header">
 				<div class="contact">
-					<h1>ADD A POST</h1>
+					<h1>Welcome {{ request.user }}</h1>
+					<h2> We appreciate your contribution to our blog</h2>
+					<h2>You can add a post about Astronomy and Space</h2>
+
 					<form method="post">
+						{% csrf_token %}
+						<input type="hidden" name="form_type" value="post_form"/>
                                 {{ post_form.as_p }}
-                                {% csrf_token %}
+
                                 <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
                             </form>
 				</div>

@@ -1,0 +1,29 @@
+{% extends 'project/base.html' %}
+{% load static %}
+{% block title %}Thank You{% endblock title%}
+
+{% block contact %}
+
+<div id="body">
+			<div class="header">
+				<div class="contact">
+					<h1>Thank You {{ request.user }}</h1>
+					<h2>Your post has been submitted to the admin, they will review it and publish it on the blog</h2>
+                    <h2> Thank you for your contribution</h2>
+                </div>
+                <div>
+                        <a href="{% url 'blog' %}" class="more">Blog Page</a></div>
+
+                <div>
+                        <a href="{% url 'home' %}" class="more">Home</a></div>
+            </div>
+    <div class="section" style="background-color: gray;">
+        <div>
+            <br>
+            <img style="display: block; margin-left: auto; margin-right: auto; width: 100%;"
+                 src="{% static 'project/images/logora.jpeg' %}" alt="">
+
+        </div>
+    </div>
+</div>
+{% endblock contact %}

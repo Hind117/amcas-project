@@ -1,6 +1,6 @@
 {% extends 'project/base.html' %}
 {% load static %}
-{% block title %}Topic{% endblock title%}
+{% block title %}AMCAS Library{% endblock title%}
 
 {% block contact %}
 <div id="body" >
@@ -18,11 +18,17 @@
 						<br>
 						<h1>You Can buy the book from:</h1>
 						<br>
-						<a target="_blank" href="{{x.link1}}" class="more">Jamloon</a>
+						<div>
+						<a target="_blank" href="{{x.link1}}" class="more">Bookstore 1</a>
+						</div>
 						<br>
-						<a target="_blank" href="{{x.link2}}" class="more">Jarir</a>
+						<div>
+						<a target="_blank" href="{{x.link2}}" class="more">Bookstore 2</a>
+						</div>
 						<br>
-						<a target="_blank" href="{{x.link3}}" class="more">Amazon</a>
+						<div>
+						<a target="_blank" href="{{x.link3}}" class="more">Bookstore 3</a>
+							</div>
 					</li>
 					{% endfor %}
 				</ul>

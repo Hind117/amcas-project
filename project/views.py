@@ -161,7 +161,7 @@ def contact(request):
 
         var_contact = Contact(name=Your_name, email=Your_email, subject=Subject, messages=Your_Message)
         var_contact.save()
-        return render(request, 'project/home.html')
+        return render(request, 'project/message_submitted.html')
     else:
         return render(request, 'project/contact.html')
 
@@ -173,9 +173,15 @@ def post_form(request):
         if post_form.is_valid():
             new_post = post_form.save()
             new_post.save()
-            return redirect('blog')
+            return redirect('post_submitted')
     return render(request, 'project/post_form.html', {'post_form':post_form})
 
+@login_required(login_url='login')
+def post_submitted(request):
+    return render(request, 'project/post_submitted.html')
+
+def message_submitted(request):
+    return render(request, 'project/message_submitted.html')
 
 
 def detail(request, article_id):
@@ -192,7 +198,7 @@ def detail(request, article_id):
 
         if request.POST.get('form_type') == 'like':
             if(not user.is_authenticated):
-                like_exception = "You Can Not Like Without Registration"
+                like_exception = "You have to login to like this post!"
             else:
                 if  user in detail_page.likes.all():
                     detail_page.likes.remove(user)
@@ -202,7 +208,7 @@ def detail(request, article_id):
 
         if request.POST.get('form_type') == 'comment':
             if(not user.is_authenticated):
-                comment_exception = "You Can Not Comment Without Registration"
+                comment_exception = "You have to login to comment on this post!"
             else:
                 comment_form = CommentForm(data=request.POST)
                 if comment_form.is_valid():
@@ -222,7 +228,6 @@ def detail(request, article_id):
                    'like_exception':like_exception,
                    'comment_exception':comment_exception,
                    'comment_form': comment_form})
-
 
 
 def signup(request):

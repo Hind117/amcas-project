@@ -17,6 +17,7 @@
         <div>
             <h1>Blog</h1>
             <div class="article">
+                <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
                 <ul>
                     {% for x in var_1.all %}
                     <li>
@@ -27,7 +28,7 @@
                         <a href="{% url 'detail' x.id %}" class="more">Read More</a>
                     </li>
                     {% endfor %}
-                    <p>You have visited this page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
                 </ul>
             </div>
             <div class="sidebar">

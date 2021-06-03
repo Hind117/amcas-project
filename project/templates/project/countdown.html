@@ -1,15 +1,20 @@
 {% extends 'project/base.html' %}
 {% load static %}
-{% block title %}Topic{% endblock title%}
+{% block title %}HALLEY'S COMET{% endblock title%}
 
 {% block contact %}
 <div id="body" >
     <div class="header">
         <div>
-            <h2 style="color:white;">Halley's Comet<br><br> Perihelion:{{formatted_date}}</h2>
+            <h2 style="color:white;">Halley's Comet<br><br></h2>
+            <h3 style="color:white; text-align:center;">Halley was last seen in Earth's skies in 1986 and was met in space by an international fleet of spacecraft. It will return in 2061 on its regular 76-year journey around the Sun.</h3>
             <hr>
+            <h2>NEXT CLOSE APPROACH TO THE SUN:</h2>
+            <h2> Perihelion:{{formatted_date}}</h2>
+
             <td><h1 style="margin: 0 !important; margin-top: 30px !important;" id="demo"></h1></td>
             <br>
+            <hr>
             <img src="{% static 'project/images/Halley.gif' %}">
             <br>
             <hr>

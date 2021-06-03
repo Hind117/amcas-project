@@ -37,18 +37,18 @@
         <div>
             <h1>AMCAS club's objectives and highlights:</h1>
             <br><br>
-                <p style="font-family: audiowide-regular-webfont;">- Spreading awareness to the astrology and all its subcategories.</p>
+                <p style="font-family: 'Times New Roman', Times, serif; font-size: 24px;">- Spreading awareness to the astrology and all its subcategories.</p>
                 <br>
             <br>
 
-            <p style="font-family: audiowide-regular-webfont;">- Preparing informative events that specialize in cosmology science around the arabic world with the organization and participation of the club's members.</p>
+            <p style="font-family: 'Times New Roman', Times, serif; font-size: 24px;">- Preparing informative events that specialize in cosmology science around the arabic world with the organization and participation of the club's members.</p>
             <br><br>
-                <p style="font-family: audiowide-regular-webfont;">- Generating a distinctive footprint that takes part in the upcoming development in Saudi arabia regarding cosmology science as well as other arabic countries.</p>
+                <p style="font-family: 'Times New Roman', Times, serif; font-size: 24px;">- Generating a distinctive footprint that takes part in the upcoming development in Saudi arabia regarding cosmology science as well as other arabic countries.</p>
            <div class="header">
         <div>
             <div class="body">
                 <div>
-                    <p style="font-family: audiowide-regular-webfont;">WANT TO BE A MEMBER OF THE CLUB?</p>
+
                     <a href="{% url 'signup' %}" class="more">Join Us</a>
                 </div>
             </div>
@@ -74,19 +74,18 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <h1 style="color:white">NASA LIVE</h1>
+                <div class="col-md-8 col-sm-12">
+                    <h1 style="color:white; font-family: audiowide-regular-webfont;">NASA LIVE</h1>
 
                     <iframe width="80%" height="310" src="https://www.youtube.com/embed/21X5lGlDOfg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-                <div class="col-md-4 col-sm-12 footer-latest-blog">
-                    <h1 style="color:white">LATEST BLOG</h1>
-                    
+                <div class="col-md-4 col-sm-12">
+                    <h1 style="color:white; font-family: audiowide-regular-webfont;">LATEST BLOG</h1>
                     {% for post in post %}
                     <div class="row" style="padding:0; margin:0">
                         <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
-                            <h1 class="title">{{ post.title }}</h1>
-                            <span class="date">{{ post.date }}</span>
+                            <h3 class="title" style="color:white;">{{ post.title }}</h3>
+                            <span class="date" style="color:white;">{{ post.date }}</span>
                         </div>
                         <div class="col-md-6 col-sm-6" style="padding:0; margin:0">
                             <a href="{% url 'detail' post.id %}" class="more link">Read More</a>
@@ -95,28 +94,28 @@
                     {% endfor %}
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <h1 style="color:white">Quick Links</h1>
+                    <h1 style="color:white; font-family: audiowide-regular-webfont;">Quick Links</h1>
                     <ol>
                         <li style="color:white;">
-                            <a href="{% url 'contact' %}" style="color:white;">Contact</a>
-                        </li>
-    
-                        <li style="color:white;">
-                            <a href="{% url 'nasa' %}" style="color:white;">NASA News</a>
-                        </li>
-                        <li style="color:white;">
-                            <a href="{% url 'library' %}" style="color:white;">AMCAS Library</a>
-                        </li>
-                        <li style="color:white;">
-                            <a href="{% url 'about' %}" style="color:white;">About</a>
-                        </li>
-    
-                        <li style="color:white;">
-                            <a href="{% url 'events' %}" style="color:white;">Events</a>
+                            <a href="{% url 'contact' %}" style="color:white; font-size: 18px;">Contact</a>
                         </li>
 
                         <li style="color:white;">
-                            <a href="{% url 'countdown' %}" style="color:white;">Halley's Comet</a>
+                            <a href="{% url 'nasa' %}" style="color:white; font-size: 18px;">NASA News</a>
+                        </li>
+                        <li style="color:white;">
+                            <a href="{% url 'library' %}" style="color:white; font-size: 18px;">AMCAS Library</a>
+                        </li>
+                        <li style="color:white;">
+                            <a href="{% url 'about' %}" style="color:white; font-size: 18px;">About</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'events' %}" style="color:white; font-size: 18px;">Events</a>
+                        </li>
+
+                        <li style="color:white;">
+                            <a href="{% url 'countdown' %}" style="color:white; font-size: 18px;">Halley's Comet</a>
                         </li>
                     </ol>
                 </div>
@@ -125,4 +124,4 @@
     </div>
 </div>
 
-{% endblock contact %}
+    {% endblock contact %}
