@@ -19,7 +19,7 @@ class Article(models.Model):
     title = models.CharField(max_length=250)
     body = models.TextField()
     date = models.DateField()
-    image = models.ImageField(upload_to='media')
+    image = models.ImageField(upload_to='images/')
     likes = models.ManyToManyField(User)
     published = models.BooleanField(default=True)
 
@@ -49,7 +49,7 @@ class nasaNew(models.Model):
     title = models.CharField(max_length=250)
     body = models.TextField()
     date = models.DateField()
-    image = models.ImageField(upload_to='media')
+    image = models.ImageField(upload_to='images/')
     published = models.BooleanField(default=True)
 
     def summary(self):
@@ -61,9 +61,9 @@ class nasaNew(models.Model):
 
 
 class FilesAdmin(models.Model):
-    adminupload=models.FileField(upload_to='media')
+    adminupload=models.FileField(upload_to='images/')
     title=models.CharField(max_length=200)
-    image = models.ImageField(upload_to='media')
+    image = models.ImageField(upload_to='images/')
     date = models.DateField()
 
     def __str__(self):
@@ -89,7 +89,7 @@ def save(self, *args, **kwargs):
 #Topic model
 class Topic(models.Model):
     title=models.CharField(max_length=200)
-    pdfupload=models.FileField(upload_to='media')
+    pdfupload=models.FileField(upload_to='images/')
     time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -99,7 +99,7 @@ class Topic(models.Model):
 #Book model
 class Book(models.Model):
     title=models.CharField(max_length=200)
-    image=models.FileField(upload_to='media')
+    image=models.FileField(upload_to='images/')
     link1 = models.CharField(max_length=200)
     link2 = models.CharField(max_length=200, blank=True)
     link3=models.CharField(max_length=200, blank=True)
