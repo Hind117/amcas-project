@@ -71,6 +71,27 @@
                     </div>
                 </div>
             </div>
+            <div class="sidebar">
+                <div class="article">
+						<ul>
+
+							<li>
+								<h1>RECENT POSTS</h1>
+								<ul>
+                                    {% for post in posts %}
+									<li>
+										<h2>{{ post.title }}</h2>
+										<span>{{ post.date }}</span>
+                                        <a href="{% url 'detail' post.id %}" class="more">Read More</a>
+									</li>
+                                    {% endfor %}
+								</ul>
+                                <a href="{% url 'post_form' %}" class="more">ADD POST</a>
+							</li>
+
+						</ul>
+                    </div>
+					</div>
 
         </div>
     </div>

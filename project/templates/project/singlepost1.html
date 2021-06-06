@@ -16,6 +16,27 @@
 						<span>{{ detail_blog1.date }}</span>
 						<p style="font-family: 'Times New Roman', Times, serif; font-size: 24px; line-height: 1.6;">{{ detail_blog1.body }}</p>
 					</div>
+					<div class="sidebar">
+                <div class="article">
+						<ul>
+
+							<li>
+								<h1>RECENT POSTS</h1>
+								<ul>
+                                    {% for post in posts %}
+									<li>
+										<h2>{{ post.title }}</h2>
+										<span>{{ post.date }}</span>
+                                        <a href="{% url 'detail' post.id %}" class="more">Read More</a>
+									</li>
+                                    {% endfor %}
+								</ul>
+
+							</li>
+
+						</ul>
+                    </div>
+					</div>
 
 				</div>
 			</div>

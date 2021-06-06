@@ -32,7 +32,8 @@ def about(request):
     return render(request, 'project/about.html')
 
 def singlepost(request):
-    return render(request, 'project/singlepost.html')
+    posts = Article.objects.filter(published=True).order_by('-date')[0:3]
+    return render(request, 'project/singlepost.html', {'posts':posts})
 
 
 def earthMoon(request):
@@ -149,7 +150,7 @@ def blog(request):
     context = {
         'num_visits': num_visits,
         'var_1': var_1,
-        'post':posts,
+        'posts':posts,
     }
     return render(request, 'project/blog.html', context)
 
@@ -187,6 +188,7 @@ def message_submitted(request):
 
 
 def detail(request, article_id):
+    posts = Article.objects.filter(published=True).order_by('-date')[0:3]
     detail_page = get_object_or_404(Article, pk=article_id)
     user = request.user
     like_exception = False
@@ -229,7 +231,7 @@ def detail(request, article_id):
                    'liked': liked,
                    'like_exception':like_exception,
                    'comment_exception':comment_exception,
-                   'comment_form': comment_form})
+                   'comment_form': comment_form,'posts':posts})
 
 
 def signup(request):
@@ -269,6 +271,7 @@ def logoutUser(request):
     return redirect('home')
 
 def nasa(request):
+    posts = nasaNew.objects.filter(published=True).order_by('-date')[0:3]
     search_post = request.GET.get('search')
     if search_post:
         var_2 = nasaNew.objects.filter(Q(title__icontains=search_post) & Q(body__icontains=search_post))
@@ -279,14 +282,16 @@ def nasa(request):
     context = {
         'num_visits': num_visits,
         'var_2': var_2,
+        'posts':posts,
     }
     return render(request, 'project/nasa.html', context)
 
 
 
 def detail1(request, nasaNew_id):
+    posts = nasaNew.objects.filter(published=True).order_by('-date')[0:3]
     detail_page1 = get_object_or_404(nasaNew, pk=nasaNew_id)
-    return render(request, 'project/singlepost1.html', {'detail_blog1': detail_page1})
+    return render(request, 'project/singlepost1.html', {'detail_blog1': detail_page1, 'posts':posts})
 
 def planets(request):
     return  render(request, 'project/planets.html')
