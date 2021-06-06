@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 import requests
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from itertools import chain
 from .models import Contact, Article, nasaNew, FilesAdmin, Profile, Topic, Book, MemberPost
@@ -354,6 +356,15 @@ def profile(request):
     return render(request, 'project/profile.html', context)
 
 
+def download(request, path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/adminupload")
+            response['content-Disposition'] = 'inline;filename=' + os.path.basename(file_path)
+            return response
+
+        raise Http404
 
 def post_detail(request, slug):
     template_name = 'post_detail.html'

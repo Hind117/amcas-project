@@ -1,3 +1,6 @@
+from django.conf.urls import url
+from django.views.static import serve
+
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -65,10 +68,13 @@ urlpatterns = [
                   path('venus/', views.venus, name='venus'),
                   path('earth/', views.earth, name='earth'),
                   path('mars/', views.mars, name='mars'),
-                  path('jupiter', views.jupiter, name='jupiter'),
-                  path('saturn', views.saturn, name='saturn'),
-                  path('uranus', views.uranus, name='uranus'),
-                  path('neptune', views.neptune, name='neptune'),
+                  path('jupiter/', views.jupiter, name='jupiter'),
+                  path('saturn/', views.saturn, name='saturn'),
+                  path('uranus/', views.uranus, name='uranus'),
+                  path('neptune/', views.neptune, name='neptune'),
+url(r'^download/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+              ]
 
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
-                                                                                           document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
