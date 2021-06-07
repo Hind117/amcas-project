@@ -63,7 +63,7 @@ class nasaNew(models.Model):
 class FilesAdmin(models.Model):
     adminupload=models.FileField(upload_to='media')
     title=models.CharField(max_length=200)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='media')
     date = models.DateField()
 
     def __str__(self):
